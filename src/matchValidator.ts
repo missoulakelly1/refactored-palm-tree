@@ -1,5 +1,7 @@
 import { Validator } from './Validator';
 
+//regex to match valid data
+
 class matchValidator implements Validator {
     isValid(s: string): boolean {
         //match characters and white spaces, single character, comma, characters and whitespaces, single character, end of input

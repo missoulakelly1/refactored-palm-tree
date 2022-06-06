@@ -1,6 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.matchValidator = void 0;
+//regex to match valid data
 class matchValidator {
     isValid(s) {
         //match characters and white spaces, single character, comma, characters and whitespaces, single character, end of input
