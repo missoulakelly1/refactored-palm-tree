@@ -12,11 +12,27 @@
 // const num = Number(last);
 // console.log(typeof num);
 var match = {
-    teamName: "San Jose Earthquakes",
-    score: 3
+    firstTeamName: "San Jose Earthquakes",
+    firstTeamScore: 3,
+    secondTeamName: "Monterey United",
+    secondTeamScore: 4,
 };
 var assignPoints = function (obj) {
-    console.log("teamName :" + obj.teamName);
-    console.log("score :" + obj.score);
+    // console.log("firstTeamName :"+obj.firstTeamName) 
+    // console.log("firstTeamScore :"+obj.firstTeamScore) 
+    // console.log("secondTeamName :"+obj.secondTeamName) 
+    // console.log("secondTeamScore :"+obj.secondTeamScore) 
+    // var text;
+    // if (match.firstTeamScore < match.secondTeamScore) text = "Monterey United won this match"
+    // console.log(text);
+    var winPoints = 3;
+    var tiePoints = 1;
+    var lossPoints = 0;
+    var rankingPoints;
+    //console.log(typeof winPoints);
+    if (match.firstTeamScore > match.secondTeamScore) {
+        rankingPoints = match.firstTeamScore + winPoints;
+        console.log();
+    }
 };
 assignPoints(match);
