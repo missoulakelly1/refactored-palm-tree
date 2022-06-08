@@ -1,48 +1,32 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const match_validator_1 = require("./match_validator");
-var matchValidator = new match_validator_1.MatchValidator();
-var readline = require('readline');
-var fs = require('fs');
-var matchArray = '';
-var arr = '';
-var readable = readline.createInterface({
-    input: fs.createReadStream('./src/sample_input.txt')
-});
-var lineno = 0;
-readable.on('line', function (line) {
-    lineno++;
-    const arr = line.toString().replace(/\r\n/g, '\n').split('\n');
-    console.log('Line number ' + lineno + ': ' + line);
-    //console.log(arr)
-    // console.log(typeof arr);
-});
-// import { matchValidator } from './matchValidator';
-// let match = 'Monterey United 1, Capitola Seahorses';
-// let validator = new matchValidator();
-// let result = validator.isValid(match);
+const MatchValidator_1 = require("./MatchValidator");
+//first step:  validate data -- "garbage in, garbage out"
+let matchTest = 'Monterey United 1, Capitola Seahorses';
+let validator = new MatchValidator_1.MatchValidator();
+let result = validator.isValid(matchTest);
 //console.log(result);
-// var result;
-// result = "San Jose Earthquakes 3, Santa Cruz Slugs 3".split(","); 
-// console.log(result);
-// const str = 'San Jose Earthquakes 3';
-// const last = str[str.length - 1];
-// const num = Number(last);
-// console.log(typeof num);
+var resultTest = "San Jose Earthquakes 3, Santa Cruz Slugs 3".split(",");
+//console.log(resultTest);
+const str = 'San Jose Earthquakes 3';
+const last = str[str.length - 1];
+const num = Number(last);
+//console.log(typeof num);
 var match = {
     firstTeamName: "San Jose Earthquakes",
     firstTeamScore: 3,
     secondTeamName: "Monterey United",
     secondTeamScore: 4,
 };
-var assignPoints = function (obj) {
-    // console.log("firstTeamName :"+obj.firstTeamName) 
-    // console.log("firstTeamScore :"+obj.firstTeamScore) 
-    // console.log("secondTeamName :"+obj.secondTeamName) 
-    // console.log("secondTeamScore :"+obj.secondTeamScore) 
-    // var text;
-    // if (match.firstTeamScore < match.secondTeamScore) text = "Monterey United won this match"
-    // console.log(text);
+var assignPoints = function (match) {
+    //console.log("firstTeamName :"+match.firstTeamName) 
+    // console.log("firstTeamScore :"+match.firstTeamScore) 
+    // console.log("secondTeamName :"+match.secondTeamName) 
+    // console.log("secondTeamScore :"+match.secondTeamScore) 
+    var text;
+    if (match.firstTeamScore < match.secondTeamScore)
+        text = "Monterey United won this match";
+    console.log(text);
     var winPoints = 3;
     var tiePoints = 1;
     var lossPoints = 0;
@@ -50,18 +34,7 @@ var assignPoints = function (obj) {
     //console.log(typeof winPoints);
     if (match.firstTeamScore > match.secondTeamScore) {
         rankingPoints = match.firstTeamScore + winPoints;
-        console.log();
+        // console.log()
     }
 };
 assignPoints(match);
-class Team {
-    constructor(teamName, rankingPoints) {
-        this.teamName = teamName;
-        this.rankingPoints = rankingPoints;
-    }
-    displayRanking() {
-        return `${this.teamName} ${this.rankingPoints}`;
-    }
-}
-let team = new Team("Capitola Seahorses", 20);
-console.log((team));

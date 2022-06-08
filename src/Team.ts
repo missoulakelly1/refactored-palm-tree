@@ -16,7 +16,7 @@ class Team {
   
   let team = new Team("Capitola Seahorses", 20);
   //console.log((team));
-  
+  export { Team };
   
   
   
