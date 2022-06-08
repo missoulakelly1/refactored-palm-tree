@@ -2,7 +2,7 @@ import { Validator } from './Validator';
 
 //regex to match valid data
 
-class matchValidator implements Validator {
+class MatchValidator implements Validator {
     isValid(s: string): boolean {
         //match characters and white spaces, single character, comma, characters and whitespaces, single character, end of input
         const matchRegex = /^[a-zA-Z]+(\s+([a-zA-Z]+\s+)+).,\s[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+\s.$/;
@@ -10,4 +10,4 @@ class matchValidator implements Validator {
     }
 }
 
-export { matchValidator };
+export { MatchValidator };

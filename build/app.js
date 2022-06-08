@@ -1,4 +1,22 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const matchValidator_1 = require("./matchValidator");
+var matchValidator = new matchValidator_1.MatchValidator();
+var readline = require('readline');
+var fs = require('fs');
+var matchArray = '';
+var arr = '';
+var readable = readline.createInterface({
+    input: fs.createReadStream('./src/sample-input.txt')
+});
+var lineno = 0;
+readable.on('line', function (line) {
+    lineno++;
+    const arr = line.toString().replace(/\r\n/g, '\n').split('\n');
+    console.log('Line number ' + lineno + ': ' + line);
+    //console.log(arr)
+    // console.log(typeof arr);
+});
 // import { matchValidator } from './matchValidator';
 // let match = 'Monterey United 1, Capitola Seahorses';
 // let validator = new matchValidator();
