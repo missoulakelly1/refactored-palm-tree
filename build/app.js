@@ -1,13 +1,13 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const matchValidator_1 = require("./matchValidator");
-var matchValidator = new matchValidator_1.MatchValidator();
+const match_validator_1 = require("./match_validator");
+var matchValidator = new match_validator_1.MatchValidator();
 var readline = require('readline');
 var fs = require('fs');
 var matchArray = '';
 var arr = '';
 var readable = readline.createInterface({
-    input: fs.createReadStream('./src/sample-input.txt')
+    input: fs.createReadStream('./src/sample_input.txt')
 });
 var lineno = 0;
 readable.on('line', function (line) {
@@ -54,3 +54,14 @@ var assignPoints = function (obj) {
     }
 };
 assignPoints(match);
+class Team {
+    constructor(teamName, rankingPoints) {
+        this.teamName = teamName;
+        this.rankingPoints = rankingPoints;
+    }
+    displayRanking() {
+        return `${this.teamName} ${this.rankingPoints}`;
+    }
+}
+let team = new Team("Capitola Seahorses", 20);
+console.log((team));

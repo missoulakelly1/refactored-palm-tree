@@ -1,4 +1,4 @@
-import { MatchValidator } from './matchValidator';
+import { MatchValidator } from './match_validator';
 var matchValidator = new MatchValidator();
 var readline = require('readline');
 var fs = require('fs');
@@ -7,7 +7,7 @@ var matchArray = '';
 
 var arr = '';
 var readable = readline.createInterface({
-  input: fs.createReadStream('./src/sample-input.txt')
+  input: fs.createReadStream('./src/sample_input.txt')
 });
 
 var lineno = 0;
@@ -66,6 +66,24 @@ var assignPoints = function(obj: { firstTeamName:string, firstTeamScore :number,
    }
 } 
 assignPoints(match)
+class Team {
+  teamName: string;
+  rankingPoints: number;
+
+  constructor(teamName: string, rankingPoints: number) {
+      this.teamName = teamName;
+      this.rankingPoints = rankingPoints;
+  }
+
+  displayRanking(): string {
+      return `${this.teamName} ${this.rankingPoints}`;
+     
+  
+  }
+}
+
+let team = new Team("Capitola Seahorses", 20);
+console.log((team));
 
 
 

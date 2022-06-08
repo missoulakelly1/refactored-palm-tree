@@ -1,13 +1,12 @@
-import { Validator } from './Validator';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MatchValidator = void 0;
 //regex to match valid data
-
-class MatchValidator implements Validator {
-    isValid(s: string): boolean {
+class MatchValidator {
+    isValid(s) {
         //match characters and white spaces, single character, comma, characters and whitespaces, single character, end of input
         const matchRegex = /^[a-zA-Z]+(\s+([a-zA-Z]+\s+)+).,\s[a-zA-Z]+ [a-zA-Z]+ [a-zA-Z]+\s.$/;
         return matchRegex.test(s);
     }
 }
-
-export { MatchValidator };
+exports.MatchValidator = MatchValidator;
