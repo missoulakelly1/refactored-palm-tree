@@ -1,5 +1,6 @@
 import { MatchValidator } from "./MatchValidator";
 
+function getMatchData() {
 var readline = require('readline');
 var fs = require('fs');
 
@@ -8,6 +9,8 @@ var fs = require('fs');
 // let match = "San Jose Earthquakes 3, Santa Cruz Slugs 3";
  //let validator = new MatchValidator();
  //let result = validator.isValid(line);
+
+  
 
   const myInterface = readline.createInterface({
     input: fs.createReadStream('./src/sample_input.txt')
@@ -18,19 +21,17 @@ myInterface.on('line', function (line) {
 //const arr = line.toString().replace(/\r\n/g,'\n').split('\n');
 let validator = new MatchValidator();
 let result = validator.isValid(line);
-  
+  //lineno++;
   //console.log(line);
-//console.log(result);
-if (result === true ) {
-//const arr = line.toString().replace(/\r\n/g,'\n').split('\n');
+console.log(result);
 
-//console.log(arr);
-console.log(arr[1]);
-
-//TODO create array from line
-}
   
 
 
 });
+}
 
+
+
+
+//export { GetMatchInput };
