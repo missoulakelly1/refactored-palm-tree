@@ -17,9 +17,9 @@ myInterface.on('line', function (line) {
     //console.log(line);
     //console.log(result);
     if (result === true) {
-        //const arr = line.toString().replace(/\r\n/g,'\n').split('\n');
-        //console.log(arr);
-        console.log(arr[1]);
+        const arr = line.toString().replace(/\r\n/g, '\n').split('\n');
+        console.log(arr);
+        //console.log(arr[1]);
         //TODO create array from line
     }
 });
