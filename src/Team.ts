@@ -1,10 +1,12 @@
 class Team {
     teamName: string;
     rankingPoints: number;
+   
   
     constructor(teamName: string, rankingPoints: number) {
         this.teamName = teamName;
         this.rankingPoints = rankingPoints;
+        
     }
   
     displayRanking(): string {
